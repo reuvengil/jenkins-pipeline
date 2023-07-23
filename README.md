@@ -107,7 +107,7 @@ Now all that's left is to upload the config file into the Jenkins credentials. N
 
 ### Set Terraform Tool
 
-In **"Manage Jenkins > Tools"**, scroll down until you see the title "Terraform." Click on **"Add Terraform"**, name it `Terraform`, and choose the latest Linux version (amd64). Then choose **"Add Installer"** and select **"Install from bintray.com"**:
+In **"Manage Jenkins > Tools"**, scroll down until you see the title "Terraform." Click on **"Add Terraform"**, name it `Terraform`, and choose the [latest Linux version (amd64)](https://developer.hashicorp.com/terraform/downloads). Then choose **"Add Installer"** and select **"Install from bintray.com"**:
 ![terraform](./images/terraform.png)
 
 ### Creating a Pipeline
