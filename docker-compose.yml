@@ -1,17 +1,24 @@
-version: '3'
+version: "3"
 services:
   jenkins:
     container_name: jenkins
-    image: jenkins/jenkins:lts
+    build: .
+    # image: jenkins/jenkins:lts
     privileged: true
     user: root
-
+    networks:
+      - minikube
     ports:
       - 8080:8080
       - 5000:5000
     volumes:
       - ./jenkins/home:/var/jenkins_home
-      - /usr/bin/docker:/usr/bin/docker 
-      - /var/run/docker.sock:/var/run/docker.sock 
+      - /usr/bin/docker:/usr/bin/docker
+      - /var/run/docker.sock:/var/run/docker.sock
       # ⬆️ $(which docker):/var/run/docker.sock
     restart: always
+
+# to be in the same network with the k8s cluster
+networks:
+  minikube:
+    external: true
